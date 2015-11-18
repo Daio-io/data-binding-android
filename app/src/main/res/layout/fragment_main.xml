@@ -1,10 +1,13 @@
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- Create your datasource and set it as a type of BindingInterface -->
     <data>
         <variable
-            name="bindingInterface"
+            name="bindy"
             type="io.daio.databinding.BindingInterface"/>
+        <variable
+            name="number"
+            type="int"/>
     </data>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -27,14 +30,16 @@
             android:id="@+id/message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{bindingInterface.message}" />
+            android:text="@{bindy.message}" />
 
+        <!-- using a custom binding adapter to set numbers as text
+        see TextViewBindingAdapter-->
         <TextView
             android:id="@+id/subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/message"
-            android:text="@{bindingInterface.subtitle}" />
+            app:numberText="@{number}" />
 
     </RelativeLayout>
 </layout>

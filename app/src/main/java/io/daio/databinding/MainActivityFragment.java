@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import io.daio.databinding.databinding.FragmentMainBinding;
 
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -29,7 +30,9 @@ public class MainActivityFragment extends Fragment {
         // the set method is defined based on the name of your <data> in the xml
         // e.g. if you called your <data name="someData"> the method would be
         // binding.setSomeData(someDataType)
-        binding.setBindingInterface(model);
+
+        binding.setNumber(12);
+        binding.setBindy(model);
         return binding.getRoot();
 
     }
