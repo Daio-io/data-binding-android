@@ -1,5 +1,6 @@
 <layout>
 
+    <!-- Create your datasource and set it as a type of BindingInterface -->
     <data>
         <variable
             name="bindingInterface"
@@ -16,6 +17,12 @@
         tools:context=".MainActivityFragment"
         tools:showIn="@layout/activity_main">
 
+        <!-- id is only used to position a text view underneath,
+        it is not really needed since findById is not required -->
+
+        <!-- Bind this text view to the message property
+        the binding library looks for a getMessage(), message()
+        or just a public message property -->
         <TextView
             android:id="@+id/message"
             android:layout_width="wrap_content"
@@ -23,6 +30,7 @@
             android:text="@{bindingInterface.message}" />
 
         <TextView
+            android:id="@+id/subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/message"

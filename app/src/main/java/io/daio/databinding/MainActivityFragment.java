@@ -24,6 +24,11 @@ public class MainActivityFragment extends Fragment {
         FragmentMainBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
         BindingModel model = new BindingModel("This is a message", "This is a subtitle");
 
+        // I have configured the datasource in the fragment layout xml to
+        // take any model that is of type BindingInterface
+        // the set method is defined based on the name of your <data> in the xml
+        // e.g. if you called your <data name="someData"> the method would be
+        // binding.setSomeData(someDataType)
         binding.setBindingInterface(model);
         return binding.getRoot();
 
