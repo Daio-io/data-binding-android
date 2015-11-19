@@ -34,6 +34,18 @@ public class MainActivityFragment extends Fragment {
         binding.setNumber(12);
         binding.setBindy(model);
         binding.setListener(new Listener(binding));
+
+        // Dynamic Binding
+        // To fully take advantage of data binding library
+        // you can bind to a type dynamically. Therefore you do not need to know the specific type
+        // you just need to know the variable exists and it will take any object value (no need to cast)
+
+        // The BR class is generated at compile time so it knows about defined variables within your layout
+
+        BindingModel model2 = new BindingModel("Some message text", "a subtitle");
+
+        binding.setVariable(io.daio.databinding.BR.model, model2);
+
         return binding.getRoot();
 
     }

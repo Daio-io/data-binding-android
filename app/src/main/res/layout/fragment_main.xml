@@ -8,6 +8,9 @@
         <variable
             name="number"
             type="int"/>
+        <variable
+            name="model"
+            type="io.daio.databinding.BindingInterface"/>
         <!-- Create a variable that is a type of onclicklistener
         in this case I have created a public inner class which
         implements view.OnClickListener -->
@@ -51,11 +54,19 @@
          by calling setListener() on the binding class in the fragment
          the passed in listener is then attached to the buttons onClick-->
         <Button
+            android:id="@+id/btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/subtitle"
             android:onClick="@{listener}"
-            android:text="Plus"/>
+            android:text="Plus"
+            app:numberText="@{number}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn"
+            android:text="@{model.message}" />
 
     </RelativeLayout>
 </layout>
