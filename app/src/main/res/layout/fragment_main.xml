@@ -8,6 +8,12 @@
         <variable
             name="number"
             type="int"/>
+        <!-- Create a variable that is a type of onclicklistener
+        in this case I have created a public inner class which
+        implements view.OnClickListener -->
+        <variable
+            name="listener"
+            type="io.daio.databinding.MainActivityFragment.Listener"/>
     </data>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -40,6 +46,16 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/message"
             app:numberText="@{number}" />
+
+         <!-- Bind the listener to the onclick
+         by calling setListener() on the binding class in the fragment
+         the passed in listener is then attached to the buttons onClick-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subtitle"
+            android:onClick="@{listener}"
+            android:text="Plus"/>
 
     </RelativeLayout>
 </layout>

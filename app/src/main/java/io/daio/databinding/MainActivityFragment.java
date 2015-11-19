@@ -33,7 +33,29 @@ public class MainActivityFragment extends Fragment {
 
         binding.setNumber(12);
         binding.setBindy(model);
+        binding.setListener(new Listener(binding));
         return binding.getRoot();
 
+    }
+
+    // Create a listener that implements OnClickListener
+    public class Listener implements View.OnClickListener {
+
+        private FragmentMainBinding binding;
+
+        // Pass in the binding on constructor so that we can get access
+        // to the bound properties
+        public Listener(FragmentMainBinding binding) {
+            this.binding = binding;
+        }
+
+        // in the onclick we can then get the number from the binding and
+        // increment and set the number again
+        // this then updates the view by the binding
+        @Override
+        public void onClick(View v) {
+            int number = binding.getNumber();
+            binding.setNumber(++number);
+        }
     }
 }
